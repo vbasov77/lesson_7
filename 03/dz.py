@@ -71,7 +71,6 @@ print(cell2.make_order(10))
 **********\n **********\n *****
 """
 
-
 class Cell:
     def __init__(self, quantity):
         self.quantity = int(quantity)
