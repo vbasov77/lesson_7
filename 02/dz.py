@@ -18,25 +18,36 @@
 Два класса: абстрактный и Clothes
 """
 
-class Clothes:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
+from abc import ABC, abstractmethod
 
-    
+
+class AbstractClothes(ABC):
+    @abstractmethod
     def get_coat(self):
-        coat = round((self.width / 6.5 + 0.5), 2)
+        pass
+
+    def get_suit(self):
+        pass
+
+
+class Clothes(AbstractClothes):
+    def __init__(self, v, h):
+        self.v = v
+        self.h = h
+        self.coat = self.v / 6.5 + 0.5
+        self.suit = self.h * 2 + 0.3
+
+    def get_coat(self):
+        coat = round((self.coat), 2)
         return str(f'Расход ткани на пальто: {coat}')
 
-    
     def get_suit(self):
-        suit = round((self.height * 2 + 0.3), 2)
+        suit = round((self.suit), 2)
         return str(f'Расход ткани на костюм: {suit}')
-        
 
     @property
     def get_all(self):
-        all = round((self.width / 6.5 + 0.5) + (self.height * 2 + 0.3), 2)
+        all = round((self.coat) + (self.suit), 2)
         return str(f'Общий расход ткани: {all}')
 
 
@@ -44,4 +55,3 @@ class Clothes:
 print(сlothes.get_coat())
 print(сlothes.get_suit())
 print(сlothes.get_all)
-
