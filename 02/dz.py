@@ -20,7 +20,6 @@
 
 from abc import ABC, abstractmethod
 
-
 class AbstractClothes(ABC):
     @abstractmethod
     def get_coat(self):
