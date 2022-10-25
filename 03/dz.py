@@ -75,7 +75,6 @@ print(cell2.make_order(10))
 class Cell:
     def __init__(self, quantity):
         self.quantity = int(quantity)
-        
 
     def __str__(self):
         return f'Результат операции {self.quantity * "*"}'
@@ -111,7 +110,7 @@ cell4 = Cell(15)
 
 print('Создаём объекты клеток')
 
-print() 
+print()
 
 print("Складываем")
 print(cell1 + cell2)
